@@ -1,0 +1,65 @@
+body {
+  margin: 40px;
+}
+
+.animation {
+  grid-area: animation;
+  border: 3px solid blue;
+}
+
+content {
+  grid-area: content;
+  border: 3px solid green;
+}
+
+aside {
+  grid-area: aside;
+  border: 3px solid red;
+}
+
+main {
+  grid-area: main;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-rows: 100px 1fr auto;
+  grid-template-columns: 1fr 200px;
+  grid-template-areas:
+    "header  header"
+    "content aside"
+    "footer footer";
+
+  @media (max-width: 600px) {
+    grid-gap: 0;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header "
+      "content"
+      "aside  "
+      "footer ";
+  }
+}
+
+header,
+footer {
+  border: 4px solid purple;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+#mars {
+  margin-left: calc(100vw / 2);
+}
