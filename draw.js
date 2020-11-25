@@ -1,4 +1,4 @@
-export function drawEarth() {
+function drawEarth() {
   var canvas = document.getElementById("earth");
   var context = canvas.getContext("2d");
   var centerX = canvas.width / 2;
@@ -14,7 +14,7 @@ export function drawEarth() {
   context.stroke();
 }
 
-export function drawMars() {
+function drawMars() {
   var canvas = document.getElementById("mars");
   var context = canvas.getContext("2d");
   var centerX = canvas.width / 2;
@@ -27,5 +27,16 @@ export function drawMars() {
   context.fill();
   context.lineWidth = 5;
   context.strokeStyle = "#003300";
-  context.stroke();Î
+  context.stroke();
+}
+
+function drawFlightPath() {
+  var canvas = document.getElementById("flightPath");
+  var context = canvas.getContext("2d");
+  var centerY = canvas.height / 2;
+
+  context.beginPath();
+  context.moveTo(0, centerY);
+  context.lineTo(canvas.width, centerY);
+  context.stroke();
 }
