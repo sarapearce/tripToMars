@@ -1,33 +1,20 @@
 function timeInLockdown() {
-  const d1 = Date.now();
-  const d2 = Date.parse("March 14, 2020");
-  const time_in_sec = d1 - d2;
-  return time_in_sec;
-}
-
-function rateToMars() {
-  // Rate is in km/s
-  return 7.9;
-}
-
-function timeToMars() {
-  const rate = rateToMars();
-  const distance = distanceToMars();
-  const time_to_mars = distance / rate;
-  console.log('time to mars', time_to_mars);
-  return time_to_mars;
-}
-
-function distanceToMars() {
-  // Distance is in km
-  return 54600000;
+  const d1 = new Date();
+  const d2 = new Date("03/14/2020");
+  const time_diff = d1.getTime() - d2.getTime();
+  //why 1000? it works, but whyyyyy????
+  const day_diff = (time_diff / (1000 * 3600 * 24)).toFixed(1);
+  return time_diff;
 }
 
 function userDistanceToMars() {
-  // Find the users percent of travel achieved so far
   const lockdown_time = timeInLockdown();
-  const mars_time = timeToMars();
-  const days_travelled = ((mars_time - lockdown_time)*(1/60)*(1/60)*(1/24)).toFixed(1);
+  const months_travelled = (lockdown_time) / (10 * 3600 * 24 * 30);
+  // Internet research says approximately 7 months to get to Mars from Earth, depending
+  // on the time of year. For MVP, this is hardcoded as 7. Later we can do Google maps api call and
+  // use that with time of year to get more precise/accurate answer.
+  const percent_travelled = (months_travelled/7).toFixed(2);
   const input = document.getElementById("result");
-  input.value = days_travelled;
+  input.value = percent_travelled;
 }
+

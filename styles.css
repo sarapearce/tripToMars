@@ -10,6 +10,7 @@ body {
 content {
   grid-area: content;
   border: 3px solid green;
+  display: flex;
 }
 
 aside {

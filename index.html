@@ -16,14 +16,12 @@
         </h5>
       </header>
       <content>
-        <canvas id="earth" width="250" height="200"></canvas>
-        <canvas id="flightPath" width="450" height="200"></canvas>
-        <canvas id="mars" width="250" height="200"></canvas>
+        <canvas id="flightPath" width="1000" height="200"></canvas>
       </content>
       <aside>
         <h4>Assuming you started lockdown on March 14th, 2020. . .</h4>
         <p>You would be </p>
-        <input id="result" value=""></input>
+        <input id="result" value=""></input>%
         <p>of the way to Mars</p>
       </aside>
       <footer>
@@ -32,9 +30,7 @@
     </main>
   </body>
   <script>
-    drawEarth();
-    drawFlightPath();
-    drawMars();
+    drawPlanets();
     userDistanceToMars();
   </script>
 </html>

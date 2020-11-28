@@ -1,42 +1,39 @@
-function drawEarth() {
-  var canvas = document.getElementById("earth");
-  var context = canvas.getContext("2d");
-  var centerX = canvas.width / 2;
-  var centerY = canvas.height / 2;
-  var radius = 40;
+function drawPlanets() {
+  const canvas = document.getElementById("flightPath");
+  const context = canvas.getContext("2d");
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const radius = 40;
+  context.lineWidth = 2;
+  context.strokeStyle = "#003300";
 
+  //draw Earth
   context.beginPath();
-  context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+  context.arc(50, centerY, radius, 0, 2 * Math.PI, false);
   context.fillStyle = "blue";
   context.fill();
-  context.lineWidth = 5;
-  context.strokeStyle = "#003300";
   context.stroke();
-}
 
-function drawMars() {
-  var canvas = document.getElementById("mars");
-  var context = canvas.getContext("2d");
-  var centerX = canvas.width / 2;
-  var centerY = canvas.height / 2;
-  var radius = 40;
-
+  //draw Mars
   context.beginPath();
-  context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+  context.arc(canvas.width-50, centerY, radius, 0, 2 * Math.PI, false);
   context.fillStyle = "red";
   context.fill();
-  context.lineWidth = 5;
-  context.strokeStyle = "#003300";
+
   context.stroke();
-}
 
-function drawFlightPath() {
-  var canvas = document.getElementById("flightPath");
-  var context = canvas.getContext("2d");
-  var centerY = canvas.height / 2;
-
+  //draw flightpath
   context.beginPath();
   context.moveTo(0, centerY);
   context.lineTo(canvas.width, centerY);
+  context.stroke();
+
+  //draw rocket
+  const rocket_radius = 10;
+
+  context.beginPath();
+  context.arc(centerX, centerY, rocket_radius, 0, 2 * Math.PI, false);
+  context.fillStyle = "purple";
+  context.fill();
   context.stroke();
 }
