@@ -2,7 +2,7 @@ function timeInLockdown() {
   const d1 = new Date();
   const d2 = new Date("03/14/2020");
   const time_diff = d1.getTime() - d2.getTime();
-  const day_diff = (time_diff / (1000 * 3600 * 24)).toFixed(1);
+  const day_diff = (time_diff / (10 * 3600 * 24)).toFixed(1);
   return day_diff;
 }
 
